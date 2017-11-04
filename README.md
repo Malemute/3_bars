@@ -1,6 +1,6 @@
 # Closest Bars
 
-[FIXME. Здесь будет описание проекта]
+This simple console utility finds the biggest, the smallest, and the closest bars from a given text file in JSON format.
 
 # Quickstart
 
@@ -10,11 +10,13 @@ Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ python bars.py # possibly requires call of python3 executive instead of just python
+$ python bars.py <path to file> # possibly requires call of python3 executive instead of just python
 
 ```
 
 ## Input Example: File
+
+See bars.json in this repository
 
 ## Intput Example: Keyboard
 
