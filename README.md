@@ -16,8 +16,42 @@ $ python bars.py <path to file> # possibly requires call of python3 executive in
 
 ## Input Example: File
 
-See bars.json in this repository
+```bash
 
+{
+  "features": [{
+    "geometry": {
+      "coordinates": [37.621587946152012, 55.765366956608361],
+      "type": "Point"
+    },
+    "properties": {
+      "DatasetId": 1796,
+      "VersionNumber": 2,
+      "ReleaseNumber": 2,
+      "RowId": "20a0b7c9-dad3-4af8-a2a2-08170f74379b",
+      "Attributes": {
+        "global_id": 20660594,
+        "Name": "Юнион Джек",
+        "IsNetObject": "нет",
+        "OperatingCompany": null,
+        "AdmArea": "Центральный административный округ",
+        "District": "Мещанский район",
+        "Address": "Нижний Кисельный переулок, дом 3, строение 1",
+        "PublicPhone": [{
+          "PublicPhone": "(495) 621-19-63"
+        }],
+        "SeatsCount": 30,
+        "SocialPrivileges": "нет"
+      }
+    },
+    "type": "Feature"
+  }],
+  "type": "FeatureCollection"
+}
+
+```
+ 
+ 
 ## Intput Example: Keyboard
 
     Latitude, Longitude: 55.836160, 37.322046
