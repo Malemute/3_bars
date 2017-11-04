@@ -1,22 +1,32 @@
-# Ближайшие бары
+# Closest Bars
 
 [FIXME. Здесь будет описание проекта]
 
-# Как запустить
+# Quickstart
 
-Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
+The script requires Python 3.5 or later version installed
 
-Запуск на Linux:
+Example of script launch on Linux, Python 3.5:
 
 ```bash
 
 $ python bars.py # possibly requires call of python3 executive instead of just python
-# FIXME вывести пример ответа скрипта
 
 ```
 
-Запуск на Windows происходит аналогично.
+## Input Example: File
 
-# Цели проекта
+## Intput Example: Keyboard
 
-Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)
+    Latitude, Longitude: 55.836160, 37.322046
+
+## Output Example
+
+    The biggest bar is Спорт бар «Красная машина» at Автозаводская улица, дом 23, строение 1 with 450 places
+    The smallest bar is БАР. СОКИ at Дубравная улица, дом 34/29 with 0 places
+    The closest bar is БАР. СОКИ at Дубравная улица, дом 34/29
+
+
+# Project Goals
+
+The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
