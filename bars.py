@@ -9,37 +9,40 @@ def load_data(filepath):
 
 
 def get_biggest_bar(bars_list):
-    biggest_bar = max(bars_list, key=
-                      lambda index:
+    biggest_bar = max(bars_list,
+                      key=lambda index:
                       index['properties']['Attributes']['SeatsCount'])
     return biggest_bar
 
 
 def get_smallest_bar(bars_list):
-    smallest_bar = min(bars_list, key=
-                       lambda index:
+    smallest_bar = min(bars_list,
+                       key=lambda index:
                        index['properties']['Attributes']['SeatsCount'])
     return smallest_bar
 
 
-def get_distance(first_point, second_point_reversed):
+def get_distance(first_point, second_point):
 
-    #Beware! Merry guys from Mos.ru keep coordinates in reversed order: E, N
-    # (say, for Moscow it's 37, 55 - not 55, 37!
+    second_point.reverse()
 
-    second_point_normal = [second_point_reversed[1], second_point_reversed[0]]
-
-    return vincenty(tuple(first_point), tuple(second_point_normal)).kilometers
+    return vincenty(first_point, second_point).kilometers
 
 
 def get_closest_bar(bars_list, coordinates):
     closest_bar = min(bars_list, key=lambda bar: get_distance(coordinates,
-                        bar['geometry']['coordinates']))
+                      bar['geometry']['coordinates']))
     return closest_bar
 
 
-def get_attributes_of_the_bar(the_bar):
+def get_bar_details(the_bar):
     return the_bar['properties']['Attributes']
+
+
+def get_bar_descr(bar_attributes, descr_kind):
+    return "The {} bar is {} at {}".format(descr_kind,
+                                           bar_attributes['Name'],
+                                           bar_attributes['Address'])
 
 
 if __name__ == '__main__':
@@ -53,19 +56,13 @@ if __name__ == '__main__':
                                    .split(",")))
     closest_bar = get_closest_bar(bars_list, my_coordinates_list)
 
-    biggest_bar_attr = get_attributes_of_the_bar(biggest_bar)
-    print("The biggest bar is {} at {} with {} places"
-          .format(biggest_bar_attr['Name'],
-                  biggest_bar_attr['Address'],
-                  biggest_bar_attr['SeatsCount']))
+    biggest_bar_attr = get_bar_details(biggest_bar)
+    print(get_bar_descr(biggest_bar_attr, "biggest") + " with {} places"
+          .format(biggest_bar_attr['SeatsCount']))
 
-    smallest_bar_attr = get_attributes_of_the_bar(smallest_bar)
-    print("The smallest bar is {} at {} with {} places"
-          .format(smallest_bar_attr['Name'],
-                  smallest_bar_attr['Address'],
-                  smallest_bar_attr['SeatsCount']))
+    smallest_bar_attr = get_bar_details(smallest_bar)
+    print(get_bar_descr(smallest_bar_attr, "smallest") + " with {} places"
+          .format(smallest_bar_attr['SeatsCount']))
 
-    closest_bar_attr = get_attributes_of_the_bar(closest_bar)
-    print("The closest bar is {} at {}"
-          .format(closest_bar_attr['Name'],
-                  closest_bar_attr['Address']))
+    closest_bar_attr = get_bar_details(closest_bar)
+    print(get_bar_descr(closest_bar_attr, "closest"))
