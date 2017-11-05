@@ -57,12 +57,15 @@ if __name__ == '__main__':
     closest_bar = get_closest_bar(bars_list, my_coordinates_list)
 
     biggest_bar_attr = get_bar_details(biggest_bar)
-    print(get_bar_descr(biggest_bar_attr, "biggest") + " with {} places"
-          .format(biggest_bar_attr['SeatsCount']))
+    print("{} with {} places"
+          .format(get_bar_descr(biggest_bar_attr, "biggest"),
+                  biggest_bar_attr['SeatsCount']))
 
     smallest_bar_attr = get_bar_details(smallest_bar)
-    print(get_bar_descr(smallest_bar_attr, "smallest") + " with {} places"
-          .format(smallest_bar_attr['SeatsCount']))
+    print("{} with {} places"
+          .format(get_bar_descr(smallest_bar_attr, "smallest"),
+                  smallest_bar_attr['SeatsCount']))
 
     closest_bar_attr = get_bar_details(closest_bar)
     print(get_bar_descr(closest_bar_attr, "closest"))
+
