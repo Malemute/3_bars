@@ -40,9 +40,10 @@ def get_bar_details(the_bar):
 
 
 def get_bar_descr(bar_attributes, descr_kind):
-    return "The {} bar is {} at {}".format(descr_kind,
+    return "The {} bar is {} at {} with {} places.".format(descr_kind,
                                            bar_attributes['Name'],
-                                           bar_attributes['Address'])
+                                           bar_attributes['Address'],
+                                           bar_attributes['SeatsCount'])
 
 
 if __name__ == '__main__':
@@ -57,15 +58,10 @@ if __name__ == '__main__':
     closest_bar = get_closest_bar(bars_list, my_coordinates_list)
 
     biggest_bar_attr = get_bar_details(biggest_bar)
-    print("{} with {} places"
-          .format(get_bar_descr(biggest_bar_attr, "biggest"),
-                  biggest_bar_attr['SeatsCount']))
+    print(get_bar_descr(biggest_bar_attr, "biggest"))
 
     smallest_bar_attr = get_bar_details(smallest_bar)
-    print("{} with {} places"
-          .format(get_bar_descr(smallest_bar_attr, "smallest"),
-                  smallest_bar_attr['SeatsCount']))
+    print(get_bar_descr(smallest_bar_attr, "smallest"))
 
     closest_bar_attr = get_bar_details(closest_bar)
     print(get_bar_descr(closest_bar_attr, "closest"))
-
