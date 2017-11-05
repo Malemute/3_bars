@@ -60,7 +60,7 @@ $ python bars.py <path to file> # possibly requires call of python3 executive in
 
     The biggest bar is Спорт бар «Красная машина» at Автозаводская улица, дом 23, строение 1 with 450 places
     The smallest bar is БАР. СОКИ at Дубравная улица, дом 34/29 with 0 places
-    The closest bar is БАР. СОКИ at Дубравная улица, дом 34/29
+    The closest bar is БАР. СОКИ at Дубравная улица, дом 34/29 with 0 places
 
 
 # Project Goals
